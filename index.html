@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jamie Navarro | AI Engineering Student</title>
+  <meta name="description" content="Portfolio of a first-year AI engineering student.">
+  <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t;}catch(e){}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top" data-bind="name"></a>
+      <nav aria-label="Primary">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="theme-toggle" type="button" aria-label="Switch to light mode">
+          <i class="ph ph-sun" aria-hidden="true"></i>
+        </button>
+        <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+          <i class="ph ph-list" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-title" data-bind="title"></p>
+          <h1 data-bind="name"></h1>
+          <p class="hero-hook" data-bind="hook"></p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-ghost" href="#contact">Contact me</a>
+          </div>
+        </div>
+        <figure class="hero-figure">
+          <canvas id="descent" role="img" aria-label="Animated gradient descent finding a minimum on a contour map"></canvas>
+          <figcaption>Gradient descent on a toy loss surface. Click the map to pick a new starting point.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="wrap about-grid">
+        <div>
+          <h2>About</h2>
+          <div class="bio" id="bio"></div>
+          <div class="edu" id="edu"></div>
+        </div>
+        <div>
+          <h3 class="sub">What I'm focused on</h3>
+          <ul class="focus" id="focus"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="wrap">
+        <h2>Projects</h2>
+        <div class="projects" id="project-list"></div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="wrap">
+        <h2>Skills</h2>
+        <dl class="skills" id="skill-list"></dl>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="wrap">
+        <h2>Contact</h2>
+        <p class="contact-blurb" data-bind="contact.blurb"></p>
+        <a class="email" id="email-link" href="#"></a>
+        <ul class="socials" id="socials"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap">
+      <p>&copy; <span id="year"></span> <span data-bind="name"></span>. Built with plain HTML, CSS and JavaScript.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="descent.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
